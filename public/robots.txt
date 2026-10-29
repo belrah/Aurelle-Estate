@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://aurelle-estates-lagos-oct26.mauvehero71.chatgpt.site/sitemap.xml
