@@ -38,7 +38,9 @@ export function AgentContactLinks() {
     prepareAgentMessage(
       "General enquiry",
       "",
-      window.location.origin + location.pathname,
+      window.location.origin +
+        import.meta.env.BASE_URL.replace(/\/$/, "") +
+        location.pathname,
     ),
   );
   return (
@@ -73,7 +75,9 @@ export function AgentChat() {
   const message = prepareAgentMessage(
     topic,
     draft,
-    window.location.origin + location.pathname,
+    window.location.origin +
+      import.meta.env.BASE_URL.replace(/\/$/, "") +
+      location.pathname,
   );
   const channels = agentChatChannels(siteConfig, message),
     channel = channels.find((c) => c.id === selected)!;
@@ -112,7 +116,10 @@ export function AgentChat() {
           >
             <div className="agent-chat-header">
               <div className="agent-chat-avatar">
-                <img src="/images/aurelle-logo.png" alt="" />
+                <img
+                  src={`${import.meta.env.BASE_URL}images/aurelle-logo.png`}
+                  alt=""
+                />
               </div>
               <div>
                 <h2 id="agent-chat-title">Aurelle Agent</h2>

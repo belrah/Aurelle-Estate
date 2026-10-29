@@ -209,7 +209,10 @@ function Header() {
       <header className={scrolled ? "scrolled" : ""}>
         <div className="header-inner">
           <Link to="/" className="brand" aria-label="Aurelle Estates home">
-            <img src="/images/aurelle-logo.png" alt="Aurelle Estate" />
+            <img
+              src={`${import.meta.env.BASE_URL}images/aurelle-logo.png`}
+              alt="Aurelle Estate"
+            />
           </Link>
           <nav aria-label="Main navigation">
             {nav.map(([label, url]) => (
@@ -2368,7 +2371,7 @@ class ErrorBoundary extends React.Component<
       <div className="empty-state">
         <h1>Let’s try that again.</h1>
         <p>This page had trouble loading.</p>
-        <a className="button" href="/">
+        <a className="button" href={import.meta.env.BASE_URL}>
           Return home
         </a>
       </div>
@@ -2409,7 +2412,7 @@ function Metadata() {
       .querySelector('meta[property="og:description"]')
       ?.setAttribute("content", description);
     const origin =
-      "https://aurelle-estates-lagos-oct26.mauvehero71.chatgpt.site";
+      window.location.origin + import.meta.env.BASE_URL.replace(/\/$/, "");
     let canonical = document.querySelector<HTMLLinkElement>(
       'link[rel="canonical"]',
     );
@@ -2424,7 +2427,7 @@ function Metadata() {
 }
 export function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <ErrorBoundary>
         <Metadata />
         <Header />

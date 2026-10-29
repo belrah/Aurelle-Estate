@@ -79,7 +79,25 @@ Only the empty `.env.example` template belongs in Git. `.env*` files are ignored
 
 ## Deployment
 
-`npm run build` outputs `dist/`. Run `npm run preview` to inspect that build locally. Deploy it to a static host with SPA fallback to `index.html`. `.openai/hosting.json` records the Sites project and output directory; the audience is managed separately in Sites settings. Source and deployment are versioned through Sites tooling. Publishing source to a GitHub repository does not deploy the website. GitHub Pages additionally needs an appropriate base path and a solution for SPA deep links; the current configuration targets a domain root with an SPA fallback. For another host, update the canonical origin in `src/App.tsx` and regenerate URLs in `public/sitemap.xml` and `public/robots.txt`. Do not expose environment secrets or service-role keys in the browser.
+### GitHub Pages
+
+The repository view at `github.com/belrah/Aurelle-Estate` displays source files and this README. The website is served at **https://belrah.github.io/Aurelle-Estate/**.
+
+In repository **Settings → Pages → Build and deployment**, select **GitHub Actions** as the source. The tracked `.github/workflows/pages.yml` installs locked dependencies, checks the application, builds and tests `dist-pages/`, then deploys that built folder on every push to `main`. Do not select the source branch root as the published website: GitHub Pages cannot compile TSX source files.
+
+```powershell
+npm ci
+npx playwright install chromium
+npm run build:pages
+npm run test:pages
+git add .
+git commit -m "Update Aurelle Estates"
+git push origin main
+```
+
+Check the **Build and deploy Aurelle Estates** run in the repository’s Actions tab before opening the website. `build:pages` defaults to `/Aurelle-Estate/`; the workflow reads the actual base path from Pages settings. `BASE_PATH` and `SITE_URL` can override it for a custom domain. Vite assets, React Router, the logo and manifest use that base. Each known route gets an `index.html` so direct visits and page refreshes work; `404.html` preserves the app’s unknown-page screen. `npm run test:pages` checks the built website using a plain static server without a development-server fallback. The ordinary `npm run build` remains a domain-root build for Sites and other static hosts.
+
+`npm run build` outputs `dist/`. Run `npm run preview` to inspect that build locally. Deploy it to a static host with SPA fallback to `index.html`. `.openai/hosting.json` records the Sites project and output directory; the audience is managed separately in Sites settings. Source and deployment are versioned through Sites tooling. For another host, regenerate URLs in `public/sitemap.xml` and `public/robots.txt`. Do not expose environment secrets or service-role keys in the browser.
 
 ## Production review still required
 
