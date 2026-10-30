@@ -78,9 +78,10 @@ header > .header-inner {
   color: var(--accent-text);
 }
 :root[data-theme="dark"] .brand img {
-  background: #fffefa;
-  border-radius: 5px;
-  padding: 4px;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  filter: drop-shadow(0 0 0.6px #ffffffd9);
 }
 :root[data-theme="dark"] .button.light {
   background: #faf7f2;
@@ -88,7 +89,11 @@ header > .header-inner {
   border-color: #faf7f2;
 }
 :root[data-theme="dark"] .agent-chat-avatar {
-  background: #fffefa;
+  background: transparent;
+  padding: 0;
+}
+:root[data-theme="dark"] .agent-chat-avatar img {
+  filter: drop-shadow(0 0 0.6px #ffffffd9);
 }
 :root[data-theme="dark"] .disabled-field input {
   background: #26313b !important;

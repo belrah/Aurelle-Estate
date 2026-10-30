@@ -79,7 +79,7 @@ Only the empty `.env.example` template belongs in Git. `.env*` files are ignored
 
 ## Appearance
 
-The header’s dark mode switch sits immediately before **Get Started**. Desktop navigation is centered independently of the logo and action buttons; narrower screens use the existing navigation drawer. Theme selection is stored as `aurelle-theme` in this browser and synchronized across tabs. With no saved choice, the site follows the operating-system theme and responds to system changes. If storage is blocked, the switch still works for the current visit. A small `public/theme-init.js` script applies the theme before the application renders to avoid a light flash on reload. Images retain their original colours, the supplied logo remains readable on a light backing, and comparison printouts use a light palette.
+The header’s dark mode switch sits immediately before **Get Started**. Desktop navigation is centered independently of the logo and action buttons; narrower screens use the existing navigation drawer. Theme selection is stored as `aurelle-theme` in this browser and synchronized across tabs. With no saved choice, the site follows the operating-system theme and responds to system changes. If storage is blocked, the switch still works for the current visit. A small `public/theme-init.js` script applies the theme before the application renders to avoid a light flash on reload. Images retain their original colours, the supplied transparent logo has no white backing in dark mode; a subtle edge shadow keeps its original dark lettering readable, and comparison printouts use a light palette.
 
 ## Property and land comparisons
 
