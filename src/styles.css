@@ -934,6 +934,24 @@ footer a:hover {
   border-color: var(--accent);
   color: var(--accent-text);
 }
+.category-tabs .category-compare {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 3px 0 8px auto;
+  padding: 11px 17px;
+  min-height: 44px;
+  border-radius: 3px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.category-tabs .category-compare:hover {
+  background: #b84700;
+}
 .listing-section {
   padding-bottom: 100px;
 }

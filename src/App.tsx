@@ -72,7 +72,6 @@ const Mortgage = React.lazy(() => import("./pages/Mortgage"));
 
 const nav = [
   ["Properties", "/properties"],
-  ["Compare", "/compare"],
   ["About Us", "/about"],
   ["Agents", "/agents"],
   ["Mortgage", "/mortgage"],
@@ -676,6 +675,9 @@ function Listings() {
               {c}
             </button>
           ))}
+          <Link to="/compare" className="category-compare">
+            Compare properties <Arrow />
+          </Link>
         </div>
         <div className="filters">
           <label>

@@ -83,7 +83,7 @@ The header’s dark mode switch sits immediately before **Get Started**. Desktop
 
 ## Property and land comparisons
 
-Use **Compare** on any listing card or property detail, then open the shortlist tray or the **Compare** navigation link. `/compare` supports up to four listings, add/remove controls, category selection, differences-only viewing, quoted price and area, indicative price per m², beds/baths, status, location, amenities, access and due-diligence criteria. A second explicitly labelled sample land plot allows land-to-land comparisons without claiming live inventory. Asking-price highlights only appear for matching categories and payment bases; they are not appraisals or investment recommendations.
+Use **Compare** on any listing card or property detail, then open the shortlist tray or the orange **Compare properties** button at the right end of the property category row. `/compare` supports up to four listings, add/remove controls, category selection, differences-only viewing, quoted price and area, indicative price per m², beds/baths, status, location, amenities, access and due-diligence criteria. A second explicitly labelled sample land plot allows land-to-land comparisons without claiming live inventory. Asking-price highlights only appear for matching categories and payment bases; they are not appraisals or investment recommendations.
 
 All listings remain sample data. No amenity distances, utilities, flood assessments, title documents or land surveys are invented. Users can enter their own distances, road observations, notes and extra costs. Budget subtotals use one purchase, one annual rental payment or the chosen number of nights, plus the explicitly entered costs. No fees, taxes, yield or appreciation are assumed.
 
