@@ -126,6 +126,31 @@ try {
     ).toHaveAttribute("href", new RegExp(encodeURIComponent(base)));
     await page.keyboard.press("Escape");
   }
+  await page.goto(
+    root + "compare?items=epe-garden-plots,ibeju-lekki-sample-plot",
+    { waitUntil: "domcontentloaded" },
+  );
+  await expect(page.locator(".comparison-property")).toHaveCount(2);
+  await expect(
+    page.getByText("Lowest asking price", { exact: true }),
+  ).toHaveCount(1);
+  await page.context().grantPermissions(["clipboard-read", "clipboard-write"]);
+  await page
+    .getByRole("button", { name: "Share listings", exact: true })
+    .click();
+  const shared = new URL(
+    await page.evaluate(() => navigator.clipboard.readText()),
+  );
+  assert.equal(shared.pathname, base + "compare");
+  assert.equal(
+    shared.searchParams.get("items"),
+    "epe-garden-plots,ibeju-lekki-sample-plot",
+  );
+  assert.equal(
+    (await page.reload({ waitUntil: "domcontentloaded" })).status(),
+    200,
+  );
+  await expect(page.locator(".comparison-property")).toHaveCount(2);
   assert.equal(
     (
       await page.goto(root + "unknown-page", { waitUntil: "domcontentloaded" })
@@ -135,7 +160,7 @@ try {
   await expect(page.locator("main h1")).toHaveText("Let’s find your way home.");
   assert.deepEqual(errors, []);
   console.log(
-    `PASS: ${routes.length} built routes and reloads; JS/CSS, logo, manifest, 404, links and chat at four widths (${base}).`,
+    `PASS: ${routes.length} built routes and reloads; JS/CSS, logo, manifest, 404, links, comparison sharing and chat at four widths (${base}).`,
   );
 } finally {
   await browser?.close();

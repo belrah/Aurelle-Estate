@@ -3,6 +3,7 @@ import { articles, properties, services } from "../../src/data";
 const paths = [
   "/",
   "/properties",
+  "/compare",
   "/about",
   "/mortgage",
   "/reed",
@@ -70,7 +71,9 @@ test("homepage search includes type on Enter and query navigation refreshes resu
     .getByRole("navigation", { name: "Main navigation" })
     .getByRole("link", { name: "Properties", exact: true })
     .click();
-  await expect(page.getByRole("status")).toContainText("6 spaces");
+  await expect(page.getByRole("status")).toContainText(
+    `${properties.length} spaces`,
+  );
   await page.goBack();
   await expect(page.getByRole("status")).toContainText("1 space");
 });
@@ -92,13 +95,15 @@ test("all property controls combine, zero price is respected, and map fallback r
   await expect(page.getByLabel("Max price (₦)")).toHaveValue("0");
   await expect(page.getByRole("status")).toContainText("0 spaces");
   await page.getByRole("button", { name: "Clear all filters" }).click();
-  await expect(page.getByRole("status")).toContainText("6 spaces");
+  await expect(page.getByRole("status")).toContainText(
+    `${properties.length} spaces`,
+  );
   await page.getByRole("button", { name: "Map view" }).click();
   await expect(
     page.getByRole("heading", { name: "A map needs a little more detail." }),
   ).toBeVisible();
   await page.getByRole("button", { name: "Back to the properties" }).click();
-  await expect(page.locator(".property-card")).toHaveCount(6);
+  await expect(page.locator(".property-card")).toHaveCount(properties.length);
 });
 test("each service CTA selects its corresponding enquiry", async ({ page }) => {
   for (let i = 0; i < services.length; i++) {

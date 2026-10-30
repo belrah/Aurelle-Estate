@@ -132,6 +132,20 @@ export const properties: Property[] = [
     status: "Let",
     photo: photos[3],
   },
+  {
+    slug: "ibeju-lekki-sample-plot",
+    title: "Ibeju-Lekki Sample Plot",
+    location: "Ibeju-Lekki, Lagos",
+    category: "Land for Sale",
+    price: 40000000,
+    period: "/ plot",
+    beds: 0,
+    baths: 0,
+    area: 500,
+    type: "Land",
+    status: "Sample only",
+    photo: photos[5],
+  },
 ];
 export const services = [
   [

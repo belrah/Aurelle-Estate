@@ -61,10 +61,17 @@ import "./styles.css";
 import { Arrow, ButtonLink, PageIntro } from "./components/Common";
 import { useFocusTrap } from "./hooks/useFocusTrap";
 import { AgentChat, AgentContactLinks } from "./components/AgentChat";
+import {
+  CompareButton,
+  CompareProvider,
+  CompareTray,
+} from "./features/compare/CompareContext";
+const ComparePage = React.lazy(() => import("./features/compare/ComparePage"));
 const Mortgage = React.lazy(() => import("./pages/Mortgage"));
 
 const nav = [
   ["Properties", "/properties"],
+  ["Compare", "/compare"],
   ["About Us", "/about"],
   ["Agents", "/agents"],
   ["Mortgage", "/mortgage"],
@@ -161,6 +168,7 @@ function PropertyCard({ property: p }: { property: Property }) {
           </span>
         </div>
         <p className="sample-caption">Sample listing · {p.status}</p>
+        <CompareButton property={p} />
       </div>
     </article>
   );
@@ -880,6 +888,7 @@ function PropertyDetail() {
         </div>
         <div>
           <ShareButton />
+          <CompareButton property={p} />
           <button
             className="outline-button"
             onClick={toggle}
@@ -2276,7 +2285,7 @@ function Legal({ type }: { type: "privacy" | "terms" }) {
     ? [
         [
           "What this demonstration collects",
-          "Property saves are stored in your browser. Search and filter choices remain local. Form entries remain in page memory unless a configured enquiry endpoint is used. No identity documents or banking details are uploaded in demonstration mode.",
+          "Property saves, comparison shortlists and your comparison estimates and notes are stored in your browser. Comparison links share listing choices only; downloaded CSV files include your notes and estimates. Search and filter choices remain local. Form entries remain in page memory unless a configured enquiry endpoint is used. No identity documents or banking details are uploaded in demonstration mode.",
         ],
         [
           "How enquiries are handled",
@@ -2386,6 +2395,7 @@ function Metadata() {
     const names: Record<string, string> = {
       "/": "Homes, land and stays",
       "/properties": "Find your space",
+      "/compare": "Compare homes and land",
       "/about": "Our story",
       "/mortgage": "Understanding your mortgage",
       "/reed": "Real estate, explained",
@@ -2428,39 +2438,43 @@ function Metadata() {
 export function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
-      <ErrorBoundary>
-        <Metadata />
-        <Header />
-        <main id="main">
-          <React.Suspense
-            fallback={
-              <div className="wrap section" role="status">
-                Preparing your next chapter…
-              </div>
-            }
-          >
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/properties" element={<Listings />} />
-              <Route path="/properties/:slug" element={<PropertyDetail />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/mortgage" element={<Mortgage />} />
-              <Route path="/reed" element={<Reed />} />
-              <Route path="/reed/:slug" element={<Article />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/agents" element={<Agents />} />
-              <Route path="/agents/sign-up" element={<AgentSignup />} />
-              <Route path="/agents/login" element={<AgentLogin />} />
-              <Route path="/privacy" element={<Legal type="privacy" />} />
-              <Route path="/terms" element={<Legal type="terms" />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </React.Suspense>
-        </main>
-        <Footer />
-        <AgentChat />
-      </ErrorBoundary>
+      <CompareProvider>
+        <ErrorBoundary>
+          <Metadata />
+          <Header />
+          <main id="main">
+            <React.Suspense
+              fallback={
+                <div className="wrap section" role="status">
+                  Preparing your next chapter…
+                </div>
+              }
+            >
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/properties" element={<Listings />} />
+                <Route path="/compare" element={<ComparePage />} />
+                <Route path="/properties/:slug" element={<PropertyDetail />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/mortgage" element={<Mortgage />} />
+                <Route path="/reed" element={<Reed />} />
+                <Route path="/reed/:slug" element={<Article />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/agents" element={<Agents />} />
+                <Route path="/agents/sign-up" element={<AgentSignup />} />
+                <Route path="/agents/login" element={<AgentLogin />} />
+                <Route path="/privacy" element={<Legal type="privacy" />} />
+                <Route path="/terms" element={<Legal type="terms" />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </React.Suspense>
+          </main>
+          <Footer />
+          <AgentChat />
+          <CompareTray />
+        </ErrorBoundary>
+      </CompareProvider>
     </BrowserRouter>
   );
 }

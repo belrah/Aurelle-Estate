@@ -46,7 +46,7 @@ npm run test:e2e
 npm run secrets:check -- --dist
 ```
 
-Playwright requires Chromium (`npx playwright install chromium`). It starts a local development server when necessary. Tests cover domain calculations, filtering, validation, cards, navigation, forms, wizard consent, save/share, article search, unknown routes, keyboard focus, and all 24 concrete pages at 360, 768, 1024 and 1440 px. Server tests use local HTTP requests and mocked upstream responses, not live Gemini calls. Test artifacts are ignored. `npm run secrets:check` scans working files and reachable Git history without printing matching credential values; `-- --dist` also scans the built browser output. Pattern scans reduce risk but are not a guarantee that every possible secret format is detectable.
+Playwright requires Chromium (`npx playwright install chromium`). It starts a local development server when necessary. Tests cover domain calculations, filtering, validation, cards, navigation, forms, wizard consent, save/share, article search, unknown routes, keyboard focus, and all concrete pages at 360, 768, 1024 and 1440 px. Server tests use local HTTP requests and mocked upstream responses, not live Gemini calls. Test artifacts are ignored. `npm run secrets:check` scans working files and reachable Git history without printing matching credential values; `-- --dist` also scans the built browser output. Pattern scans reduce risk but are not a guarantee that every possible secret format is detectable.
 
 ## Project files
 
@@ -77,7 +77,15 @@ Business email, office hours, approved agreement text, real listings, external A
 
 Only the empty `.env.example` template belongs in Git. `.env*` files are ignored with that single template exception. `.gitignore` also excludes dependencies, build output, test reports, coverage, logs, common private-key files, credential JSON files and the `secrets/` directory. Never put credentials in any `VITE_` variable: these are public build-time browser settings. The hosting project ID is configuration, not an authentication token. Run the secret check and inspect `git diff` before committing or pushing. No GitHub push is performed by the checks.
 
-## Deployment
+## Property and land comparisons
+
+Use **Compare** on any listing card or property detail, then open the shortlist tray or the **Compare** navigation link. `/compare` supports up to four listings, add/remove controls, category selection, differences-only viewing, quoted price and area, indicative price per m², beds/baths, status, location, amenities, access and due-diligence criteria. A second explicitly labelled sample land plot allows land-to-land comparisons without claiming live inventory. Asking-price highlights only appear for matching categories and payment bases; they are not appraisals or investment recommendations.
+
+All listings remain sample data. No amenity distances, utilities, flood assessments, title documents or land surveys are invented. Users can enter their own distances, road observations, notes and extra costs. Budget subtotals use one purchase, one annual rental payment or the chosen number of nights, plus the explicitly entered costs. No fees, taxes, yield or appreciation are assumed.
+
+Shortlists (`aurelle-compare`) and assessments (`aurelle-comparison-assessments`) persist locally when browser storage is available. Each assessment can be reset. Shared URLs contain only validated listing IDs, while CSV downloads include personal notes and estimates with spreadsheet-formula escaping. Print styling supports the full comparison table. The table scrolls horizontally on narrow screens with fixed criterion labels. No comparison data is uploaded or synced to an account.
+
+## Deployment options
 
 ### GitHub Pages
 

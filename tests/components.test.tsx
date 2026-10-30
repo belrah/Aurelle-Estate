@@ -33,7 +33,10 @@ describe("visitor interactions", () => {
   it("filters listings on actual records and handles empty state", () => {
     open("/properties");
     fireEvent.click(screen.getByRole("button", { name: "Land for Sale" }));
-    expect(screen.getByRole("status")).toHaveTextContent("1 space");
+    expect(screen.getByRole("status")).toHaveTextContent("2 spaces");
+    expect(
+      screen.getByRole("link", { name: "Ibeju-Lekki Sample Plot" }),
+    ).toBeInTheDocument();
     fireEvent.change(screen.getByLabelText("Location"), {
       target: { value: "unknown" },
     });
