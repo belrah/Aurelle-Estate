@@ -61,6 +61,7 @@ import "./styles.css";
 import { Arrow, ButtonLink, PageIntro } from "./components/Common";
 import { useFocusTrap } from "./hooks/useFocusTrap";
 import { AgentChat, AgentContactLinks } from "./components/AgentChat";
+import { ThemeToggle } from "./components/ThemeToggle";
 import {
   CompareButton,
   CompareProvider,
@@ -229,18 +230,21 @@ function Header() {
               </NavLink>
             ))}
           </nav>
-          <Link to="/agents/sign-up" className="button header-cta">
-            Get Started
-            <Arrow />
-          </Link>
-          <button
-            className="menu-toggle icon-button"
-            onClick={() => setOpen(!open)}
-            aria-label={open ? "Close navigation" : "Open navigation"}
-            aria-expanded={open}
-          >
-            {open ? <X /> : <Menu />}
-          </button>
+          <div className="header-actions">
+            <ThemeToggle />
+            <Link to="/agents/sign-up" className="button header-cta">
+              Get Started
+              <Arrow />
+            </Link>
+            <button
+              className="menu-toggle icon-button"
+              onClick={() => setOpen(!open)}
+              aria-label={open ? "Close navigation" : "Open navigation"}
+              aria-expanded={open}
+            >
+              {open ? <X /> : <Menu />}
+            </button>
+          </div>
         </div>
       </header>
       {open && (
@@ -2285,7 +2289,7 @@ function Legal({ type }: { type: "privacy" | "terms" }) {
     ? [
         [
           "What this demonstration collects",
-          "Property saves, comparison shortlists and your comparison estimates and notes are stored in your browser. Comparison links share listing choices only; downloaded CSV files include your notes and estimates. Search and filter choices remain local. Form entries remain in page memory unless a configured enquiry endpoint is used. No identity documents or banking details are uploaded in demonstration mode.",
+          "Theme preferences, property saves, comparison shortlists and your comparison estimates and notes are stored in your browser. Comparison links share listing choices only; downloaded CSV files include your notes and estimates. Search and filter choices remain local. Form entries remain in page memory unless a configured enquiry endpoint is used. No identity documents or banking details are uploaded in demonstration mode.",
         ],
         [
           "How enquiries are handled",

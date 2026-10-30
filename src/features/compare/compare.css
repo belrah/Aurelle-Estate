@@ -7,12 +7,12 @@
   padding: 9px 12px;
   font-size: 11px;
   min-height: 38px;
-  color: var(--navy);
+  color: var(--ink);
   background: transparent;
   margin-top: 9px;
 }
 .compare-toggle.selected {
-  border-color: var(--navy);
+  border-color: var(--ink);
   background: var(--navy);
   color: white;
 }
@@ -29,7 +29,7 @@
   display: flex;
   align-items: center;
   gap: 18px;
-  background: #fffefa;
+  background: var(--surface);
   border: 1px solid var(--border);
   border-top: 3px solid var(--accent);
   box-shadow: 0 5px 28px #00346725;
@@ -45,7 +45,7 @@
   align-items: center;
   gap: 8px;
   font-size: 13px;
-  color: var(--navy);
+  color: var(--ink);
 }
 .compare-tray span:not(.button span) {
   display: block;
@@ -99,13 +99,13 @@ body:has(.compare-tray) {
 .compare-count {
   font-size: 12px;
   white-space: nowrap;
-  color: var(--navy);
+  color: var(--ink);
   padding: 12px 16px;
   border: 1px solid var(--border);
   border-radius: 4px;
 }
 .compare-disclosure {
-  background: #f2eee6;
+  background: var(--disclosure);
   border-left: 3px solid var(--accent);
   padding: 16px 20px;
   font-size: 12px;
@@ -118,7 +118,7 @@ body:has(.compare-tray) {
   gap: 18px;
   border: 1px solid var(--border);
   padding: 22px;
-  background: #fffefa;
+  background: var(--surface);
 }
 .compare-add label {
   flex: 1;
@@ -172,7 +172,7 @@ body:has(.compare-tray) {
   width: 16px;
   height: 16px;
   margin: 0;
-  accent-color: var(--navy);
+  accent-color: var(--ink);
 }
 .compare-toolbar > div {
   display: flex;
@@ -209,7 +209,7 @@ body:has(.compare-tray) {
   isolation: isolate;
   border: 1px solid var(--border);
   border-radius: 5px;
-  background: #fffefa;
+  background: var(--surface);
   max-width: 100%;
   scrollbar-color: var(--navy) #ece9e0;
 }
@@ -248,18 +248,18 @@ body:has(.compare-tray) {
   width: 180px;
   position: sticky;
   left: 0;
-  background: #f4f1e9;
+  background: var(--criteria);
   z-index: 2;
   font-weight: 550;
 }
 .comparison-table thead tr > :first-child {
   vertical-align: bottom;
   font-size: 17px;
-  color: var(--navy);
+  color: var(--ink);
 }
 .comparison-table thead th:not(:first-child) {
   min-width: 230px;
-  background: #fffefa;
+  background: var(--surface);
 }
 .comparison-table:has(thead th:nth-child(4)) {
   min-width: 990px;
@@ -287,7 +287,7 @@ body:has(.compare-tray) {
 }
 .comparison-property > a:not(.comparison-enquire) {
   font-size: 17px;
-  color: var(--navy);
+  color: var(--ink);
   font-weight: 600;
   line-height: 1.4;
   display: flex;
@@ -308,7 +308,7 @@ body:has(.compare-tray) {
   line-height: 1.6;
 }
 .comparison-badge {
-  background: #fbeadf;
+  background: var(--badge);
   color: var(--accent-text);
   padding: 4px 8px;
   align-self: flex-start;
@@ -342,14 +342,14 @@ body:has(.compare-tray) {
 }
 .comparison-assessments details {
   border: 1px solid var(--border);
-  background: #fffefa;
+  background: var(--surface);
   border-radius: 4px;
 }
 .comparison-assessments summary {
   padding: 20px;
   cursor: pointer;
   font-size: 16px;
-  color: var(--navy);
+  color: var(--ink);
   font-weight: 550;
 }
 .comparison-assessments summary span {
@@ -398,7 +398,7 @@ body:has(.compare-tray) {
 }
 .assessment-subtotal strong {
   display: block;
-  color: var(--navy);
+  color: var(--ink);
   font-size: 21px;
 }
 .compare-bottom-note {

@@ -2,8 +2,8 @@
 @import "tailwindcss";
 :root {
   font-family: "Source Sans 3", "Source Sans Pro", Arial, sans-serif;
-  color: #1a1a1a;
-  background: #faf7f2;
+  color: var(--text);
+  background: var(--page);
   font-synthesis: none;
   --accent: #d55b0a;
   --accent-text: #8f3500;
@@ -172,8 +172,8 @@ textarea:focus-visible {
   transform: translateY(-2px);
 }
 .button.light {
-  background: #faf7f2;
-  color: #20251f;
+  background: var(--page);
+  color: var(--text);
   border-color: #faf7f2;
 }
 .text-link {
@@ -209,7 +209,7 @@ textarea:focus-visible {
   top: -100px;
   left: 20px;
   z-index: 200;
-  background: white;
+  background: var(--surface);
   padding: 15px;
 }
 .skip:focus {
@@ -228,9 +228,9 @@ textarea:focus-visible {
 header {
   position: sticky;
   top: 0;
-  background: #fffefa;
+  background: var(--surface);
   z-index: 50;
-  border-bottom: 1px solid #eeece5;
+  border-bottom: 1px solid var(--header-border);
   transition: box-shadow 0.25s;
 }
 .brand {
@@ -380,7 +380,7 @@ header nav a.active:after {
 }
 .hero-actions .button {
   background: var(--navy);
-  border-color: var(--navy);
+  border-color: var(--ink);
   color: #fff;
   font-weight: 650;
 }
@@ -424,8 +424,8 @@ header nav a.active:after {
   transform: translateX(-50%);
   max-width: 1168px;
   width: calc(100% - 180px);
-  background: #fffefa;
-  color: #24291f;
+  background: var(--surface);
+  color: var(--text);
   box-shadow: 0 15px 32px #16251e0b;
 }
 .search-tabs {
@@ -433,7 +433,7 @@ header nav a.active:after {
   gap: 34px;
   align-items: center;
   height: 51px;
-  border-bottom: 1px solid #e9e7df;
+  border-bottom: 1px solid var(--soft-border);
   padding: 0 30px;
 }
 .search-tabs button {
@@ -539,7 +539,7 @@ header nav a.active:after {
   position: absolute;
   top: 16px;
   left: 16px;
-  background: #fffefa;
+  background: var(--surface);
   padding: 7px 11px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -551,7 +551,7 @@ header nav a.active:after {
   right: 16px;
   top: 15px;
   border-radius: 50%;
-  background: #fffefa;
+  background: var(--surface);
   width: 33px;
   height: 33px;
   display: grid;
@@ -580,7 +580,7 @@ header nav a.active:after {
 .price {
   font-weight: 600;
   font-size: 17px;
-  color: #263027;
+  color: var(--text);
   margin-bottom: 20px;
 }
 .price small {
@@ -814,7 +814,7 @@ header nav a.active:after {
 }
 .contact-strip p {
   margin: 0;
-  color: #33392e;
+  color: var(--text);
   font-size: 15px;
 }
 .contact-strip a {
@@ -946,20 +946,20 @@ label {
   display: block;
   font-size: 12px;
   font-weight: 500;
-  color: #31372f;
+  color: var(--text);
 }
 input:not([type="checkbox"]):not([type="range"]),
 select,
 textarea {
   display: block;
-  background: #fffefa;
-  border: 1px solid #cbcfc5;
+  background: var(--surface);
+  border: 1px solid var(--field-border);
   border-radius: 2px;
   padding: 13px;
   width: 100%;
   margin-top: 9px;
   min-height: 45px;
-  color: #263027;
+  color: var(--text);
   min-width: 0;
 }
 textarea {
@@ -1011,7 +1011,7 @@ textarea {
   border-left: 2px solid var(--accent);
   padding: 20px 24px;
   font-size: 12px;
-  color: #51594d;
+  color: var(--text);
   line-height: 1.8;
   margin: 30px 0;
   display: flex;
@@ -1100,7 +1100,7 @@ textarea {
   display: flex;
   gap: 12px;
   align-items: center;
-  background: #fffefa;
+  background: var(--surface);
   padding: 13px 18px;
   font-size: 12px;
 }
@@ -1215,7 +1215,7 @@ textarea {
 }
 .room-tabs button[aria-pressed="true"] {
   border-color: var(--accent);
-  background: #fff0e4;
+  background: var(--warm);
 }
 .lightbox {
   position: fixed;
@@ -1396,7 +1396,7 @@ input[type="range"] {
   margin-top: 20px;
 }
 .calculator-result {
-  background: #fffefa;
+  background: var(--surface);
   padding: 30px;
   min-width: 0;
 }
@@ -1422,7 +1422,7 @@ input[type="range"] {
   color: var(--muted);
 }
 .repayment-totals b {
-  color: #20251f;
+  color: var(--text);
   font-weight: 550;
 }
 .chart {
@@ -1545,7 +1545,7 @@ th {
 }
 .article-body .article-lede {
   font-size: 21px;
-  color: #303b2f;
+  color: var(--text);
 }
 .newsletter {
   padding: 30px;
@@ -1599,7 +1599,7 @@ th {
   margin-top: 7px;
 }
 .form-status {
-  background: #f4e9d9;
+  background: var(--notice);
   padding: 20px;
   border-left: 2px solid var(--accent);
   font-size: 12px;
@@ -1666,7 +1666,7 @@ th {
 .agent-hero-image > span {
   display: block;
   padding: 19px 20px;
-  background: #fffefa;
+  background: var(--surface);
   color: var(--accent-text);
   font-size: 9px;
   letter-spacing: 1.4px;
@@ -1680,7 +1680,7 @@ th {
 }
 .agreement .agreement-preamble {
   font-size: 14px;
-  color: #30372f;
+  color: var(--text);
   line-height: 1.95;
 }
 .embedded-application {
@@ -1805,7 +1805,7 @@ th {
 .wizard-progress .done > span {
   background: var(--navy);
   color: white;
-  border-color: var(--navy);
+  border-color: var(--ink);
 }
 .wizard > form {
   max-width: 760px;
@@ -1833,7 +1833,7 @@ th {
   height: 18px;
   flex-shrink: 0;
   margin-top: 3px;
-  accent-color: var(--navy);
+  accent-color: var(--ink);
 }
 input[type="file"] {
   font-size: 11px;
@@ -1864,7 +1864,7 @@ input:disabled {
 .not-found {
   padding-top: 100px;
   padding-bottom: 100px;
-  background: #fffefa;
+  background: var(--surface);
 }
 .not-found h1 {
   margin: 0;
@@ -1905,8 +1905,8 @@ input:disabled {
   height: min(680px, calc(100dvh - 118px));
   display: flex;
   flex-direction: column;
-  background: #fffefa;
-  border: 1px solid #d5d9d3;
+  background: var(--surface);
+  border: 1px solid var(--panel-border);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 16px 60px #00224733;
@@ -1924,7 +1924,7 @@ input:disabled {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #fffefa;
+  background: var(--surface);
   padding: 6px;
   display: grid;
   place-items: center;
@@ -1969,7 +1969,7 @@ input:disabled {
   background: var(--ivory);
   border-radius: 0 10px 10px;
   font-size: 15px;
-  color: #20251f;
+  color: var(--text);
   font-weight: 550;
   line-height: 1.55;
   margin: 0 0 17px;
@@ -1994,16 +1994,16 @@ input:disabled {
   border: 1px solid var(--border);
   border-radius: 18px;
   min-height: 36px;
-  background: #fffefa;
+  background: var(--surface);
 }
 .agent-chat-topics button[aria-pressed="true"] {
   background: var(--navy);
   color: white;
-  border-color: var(--navy);
+  border-color: var(--ink);
 }
 .agent-chat-label {
   font-size: 11px;
-  color: #263127;
+  color: var(--text);
   font-weight: 550;
   margin: 0 0 9px;
   line-height: 1.6;
@@ -2056,9 +2056,9 @@ input:disabled {
   min-height: 45px;
 }
 .agent-chat-channels button[aria-pressed="true"] {
-  background: #edf2f7;
-  border-color: var(--navy);
-  color: var(--navy);
+  background: var(--surface-soft);
+  border-color: var(--ink);
+  color: var(--ink);
   box-shadow: inset 0 -2px var(--navy);
 }
 .agent-chat-channels button span {
@@ -2098,7 +2098,7 @@ input:disabled {
 .agent-chat-feedback {
   font-size: 10px;
   line-height: 1.7;
-  color: var(--navy);
+  color: var(--ink);
   margin: 8px 0 0;
 }
 .agent-chat-feedback:empty {
@@ -2161,7 +2161,7 @@ input:disabled {
   margin-left: auto;
 }
 .guide-panel {
-  background: #fffefa;
+  background: var(--surface);
   padding: 25px;
   border: 1px solid var(--border);
   box-shadow: 0 4px 25px #0001;

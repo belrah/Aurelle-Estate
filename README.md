@@ -77,6 +77,10 @@ Business email, office hours, approved agreement text, real listings, external A
 
 Only the empty `.env.example` template belongs in Git. `.env*` files are ignored with that single template exception. `.gitignore` also excludes dependencies, build output, test reports, coverage, logs, common private-key files, credential JSON files and the `secrets/` directory. Never put credentials in any `VITE_` variable: these are public build-time browser settings. The hosting project ID is configuration, not an authentication token. Run the secret check and inspect `git diff` before committing or pushing. No GitHub push is performed by the checks.
 
+## Appearance
+
+The header’s dark mode switch sits immediately before **Get Started**. Desktop navigation is centered independently of the logo and action buttons; narrower screens use the existing navigation drawer. Theme selection is stored as `aurelle-theme` in this browser and synchronized across tabs. With no saved choice, the site follows the operating-system theme and responds to system changes. If storage is blocked, the switch still works for the current visit. A small `public/theme-init.js` script applies the theme before the application renders to avoid a light flash on reload. Images retain their original colours, the supplied logo remains readable on a light backing, and comparison printouts use a light palette.
+
 ## Property and land comparisons
 
 Use **Compare** on any listing card or property detail, then open the shortlist tray or the **Compare** navigation link. `/compare` supports up to four listings, add/remove controls, category selection, differences-only viewing, quoted price and area, indicative price per m², beds/baths, status, location, amenities, access and due-diligence criteria. A second explicitly labelled sample land plot allows land-to-land comparisons without claiming live inventory. Asking-price highlights only appear for matching categories and payment bases; they are not appraisals or investment recommendations.

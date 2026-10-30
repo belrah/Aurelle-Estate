@@ -93,6 +93,16 @@ try {
     await page.setViewportSize({ width, height: 800 });
     await page.goto(root, { waitUntil: "domcontentloaded" });
     await expect(page.locator("main h1")).toBeVisible();
+    const themeSwitch = page.getByRole("switch", {
+      name: "Dark mode",
+      exact: true,
+    });
+    await themeSwitch.click();
+    await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+    await page.reload({ waitUntil: "domcontentloaded" });
+    await expect(themeSwitch).toBeChecked();
+    await themeSwitch.click();
+    await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
     await expect
       .poll(() =>
         page
