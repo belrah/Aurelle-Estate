@@ -5,7 +5,7 @@
   border: 1px solid var(--border);
   border-radius: 4px;
   padding: 9px 12px;
-  font-size: 11px;
+  font-size: 15px;
   min-height: 38px;
   color: var(--ink);
   background: transparent;
@@ -44,12 +44,12 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 13px;
+  font-size: 17px;
   color: var(--ink);
 }
 .compare-tray span:not(.button span) {
   display: block;
-  font-size: 10px;
+  font-size: 14px;
   color: var(--muted);
   white-space: nowrap;
   overflow: hidden;
@@ -57,13 +57,13 @@
   margin-top: 4px;
 }
 .compare-tray p {
-  font-size: 11px;
+  font-size: 15px;
   margin: 6px 0 0;
 }
 .compare-tray .button {
   min-height: 40px;
   padding: 10px 16px;
-  font-size: 12px;
+  font-size: 16px;
   white-space: nowrap;
 }
 .compare-clear {
@@ -93,11 +93,11 @@ body:has(.compare-tray) {
 .compare-intro p:not(.eyebrow) {
   max-width: 620px;
   color: var(--muted);
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.8;
 }
 .compare-count {
-  font-size: 12px;
+  font-size: 16px;
   white-space: nowrap;
   color: var(--ink);
   padding: 12px 16px;
@@ -108,7 +108,7 @@ body:has(.compare-tray) {
   background: var(--disclosure);
   border-left: 3px solid var(--accent);
   padding: 16px 20px;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.8;
   margin-bottom: 28px;
 }
@@ -122,18 +122,20 @@ body:has(.compare-tray) {
 }
 .compare-add label {
   flex: 1;
-  font-size: 12px;
+  font-size: 16px;
   min-width: 0;
 }
 .compare-add select {
   margin-top: 8px;
-  font-size: 13px;
-  height: 46px;
+  font-size: 17px;
+  height: auto;
+  min-height: 52px;
 }
 .compare-add .button {
-  height: 46px;
+  height: auto;
+  min-height: 52px;
   white-space: nowrap;
-  font-size: 12px;
+  font-size: 16px;
 }
 .compare-add button:disabled {
   opacity: 0.45;
@@ -151,7 +153,7 @@ body:has(.compare-tray) {
 .compare-empty p {
   max-width: 550px;
   margin: 16px auto 25px;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.8;
 }
 .compare-toolbar {
@@ -166,7 +168,7 @@ body:has(.compare-tray) {
   display: flex;
   align-items: center;
   gap: 9px;
-  font-size: 12px;
+  font-size: 16px;
 }
 .compare-toolbar input {
   width: 16px;
@@ -185,7 +187,7 @@ body:has(.compare-tray) {
   gap: 7px;
   padding: 9px 11px;
   border: 1px solid var(--border);
-  font-size: 11px;
+  font-size: 15px;
   min-height: 38px;
   border-radius: 3px;
 }
@@ -194,13 +196,13 @@ body:has(.compare-tray) {
   cursor: not-allowed;
 }
 .compare-explainer {
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.8;
   color: var(--muted);
   max-width: 900px;
 }
 .compare-scroll-hint {
-  font-size: 11px;
+  font-size: 15px;
   color: var(--muted);
   margin: 16px 0 10px;
 }
@@ -219,13 +221,13 @@ body:has(.compare-tray) {
   width: 100%;
   table-layout: fixed;
   min-width: 720px;
-  font-size: 12px;
+  font-size: 16px;
 }
 .comparison-table caption {
   text-align: left;
   padding: 14px 18px;
   background: var(--ivory);
-  font-size: 11px;
+  font-size: 15px;
   color: var(--muted);
 }
 .comparison-table th,
@@ -282,7 +284,7 @@ body:has(.compare-tray) {
   border-radius: 3px;
 }
 .comparison-property .eyebrow {
-  font-size: 8px;
+  font-size: 13px;
   margin: 3px 0 0;
 }
 .comparison-property > a:not(.comparison-enquire) {
@@ -302,7 +304,7 @@ body:has(.compare-tray) {
   min-height: 32px;
 }
 .comparison-property .comparison-enquire {
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 500;
   margin-top: 5px;
   line-height: 1.6;
@@ -313,7 +315,7 @@ body:has(.compare-tray) {
   padding: 4px 8px;
   align-self: flex-start;
   border-radius: 3px;
-  font-size: 9px;
+  font-size: 14px;
 }
 .comparison-total th,
 .comparison-total td {
@@ -330,7 +332,7 @@ body:has(.compare-tray) {
   letter-spacing: -0.8px;
 }
 .comparison-notes-heading > p:not(.eyebrow) {
-  font-size: 13px;
+  font-size: 17px;
   line-height: 1.9;
   color: var(--muted);
 }
@@ -348,13 +350,13 @@ body:has(.compare-tray) {
 .comparison-assessments summary {
   padding: 20px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--ink);
   font-weight: 550;
 }
 .comparison-assessments summary span {
   display: block;
-  font-size: 10px;
+  font-size: 14px;
   color: var(--muted);
   margin: 6px 0 0 16px;
   font-weight: 400;
@@ -366,18 +368,18 @@ body:has(.compare-tray) {
   padding: 6px 20px 24px;
 }
 .assessment-fields label {
-  font-size: 11px;
+  font-size: 15px;
   min-width: 0;
 }
 .assessment-fields input,
 .assessment-fields select,
 .assessment-fields textarea {
-  font-size: 13px;
+  font-size: 17px;
   margin-top: 8px;
 }
 .assessment-fields small {
   display: block;
-  font-size: 10px;
+  font-size: 14px;
   line-height: 1.7;
   font-weight: 400;
   color: var(--muted);
@@ -392,7 +394,7 @@ body:has(.compare-tray) {
 .assessment-subtotal {
   background: var(--ivory);
   padding: 15px;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.7;
   margin: 0;
 }
@@ -404,7 +406,7 @@ body:has(.compare-tray) {
 .compare-bottom-note {
   margin: 26px 0 0;
   max-width: 900px;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.9;
   color: var(--muted);
 }
@@ -421,7 +423,7 @@ body:has(.compare-tray) {
     letter-spacing: -1px;
   }
   .compare-intro p:not(.eyebrow) {
-    font-size: 14px;
+    font-size: 18px;
   }
   .compare-add {
     flex-wrap: wrap;
@@ -437,7 +439,7 @@ body:has(.compare-tray) {
   .comparison-table tr > :first-child {
     width: 125px;
     padding: 12px;
-    font-size: 11px;
+    font-size: 15px;
   }
   .comparison-table {
     min-width: 645px;
@@ -456,14 +458,14 @@ body:has(.compare-tray) {
     padding: 11px;
   }
   .compare-tray strong {
-    font-size: 11px;
+    font-size: 15px;
   }
   .compare-tray strong svg,
   .compare-tray > div > span {
     display: none;
   }
   .compare-tray .button {
-    font-size: 11px;
+    font-size: 15px;
     padding: 8px 10px;
   }
   .compare-clear {
@@ -561,7 +563,7 @@ body:has(.compare-tray) {
 .assessment-reset {
   grid-column: 1/-1;
   justify-self: start;
-  font-size: 11px;
+  font-size: 15px;
   text-decoration: underline;
   min-height: 36px;
   color: var(--muted);

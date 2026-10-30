@@ -79,6 +79,8 @@ Only the empty `.env.example` template belongs in Git. `.env*` files are ignored
 
 ## Appearance
 
+Most body copy is 17–18px, desktop navigation is 16px, and footer links and paragraphs are 17px. Supporting labels are enlarged too. Responsive spacing keeps the centered navigation, forms and mobile hero usable; comparison print sizing stays unchanged.
+
 The header’s dark mode switch sits immediately before **Get Started**. Desktop navigation is centered independently of the logo and action buttons; narrower screens use the existing navigation drawer. Theme selection is stored as `aurelle-theme` in this browser and synchronized across tabs. With no saved choice, the site follows the operating-system theme and responds to system changes. If storage is blocked, the switch still works for the current visit. A small `public/theme-init.js` script applies the theme before the application renders to avoid a light flash on reload. Images retain their original colours, the supplied logo remains readable on a light backing, and comparison printouts use a light palette.
 
 ## Property and land comparisons
