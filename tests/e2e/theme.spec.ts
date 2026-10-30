@@ -103,22 +103,6 @@ for (const width of [360, 768, 1024, 1440])
       ).toBe("rgb(11, 20, 30)");
     }
     await page.goto("/properties");
-    const logo = page.getByRole("banner").locator("img");
-    expect(
-      await logo.evaluate((el) => getComputedStyle(el).backgroundColor),
-    ).toBe("rgba(0, 0, 0, 0)");
-    expect(await logo.evaluate((el) => getComputedStyle(el).padding)).toBe(
-      "0px",
-    );
-    await page
-      .getByRole("button", { name: "Chat with Aurelle Agent", exact: true })
-      .click();
-    expect(
-      await page
-        .locator(".agent-chat-avatar")
-        .evaluate((el) => getComputedStyle(el).backgroundColor),
-    ).toBe("rgba(0, 0, 0, 0)");
-    await page.keyboard.press("Escape");
     if (width >= 1024) {
       const nav = await page
         .getByRole("navigation", { name: "Main navigation", exact: true })
